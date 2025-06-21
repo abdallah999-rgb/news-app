@@ -1,0 +1,20 @@
+{
+  "home": "الرئيسية",
+  "goodMorningHereIsSomeNewsForYou": "          صباح الخير          \n        إليك آخر الأخبار",
+  "general": "عام",
+  "business": "اقتصاد",
+  "entertainment": "ترفيه",
+  "sports": "رياضة",
+  "health": "صحة",
+  "technology": "تكنولوجيا",
+  "science": "علوم",
+  "viewFullArticle": "عرض الخبر كاملًا",
+  "search": "بحث",
+  "goToHome": "العودة للرئيسية",
+  "theme": "السمة",
+  "dark": "داكن",
+  "light": "فاتح",
+  "language": "اللغة",
+  "notFoundAnyArticles": "عذرًا، لا توجد مقالات لعرضها"
+
+}
