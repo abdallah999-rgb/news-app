@@ -8,7 +8,7 @@ import '../api_services/articles_response/Article.dart';
 
 
 
-class SearchDataSourceImpl extends SearchDataSource{
+class SearchDataSourceImpl implements SearchDataSource{
   final APIServices apiServices;
   SearchDataSourceImpl(this.apiServices);
   @override

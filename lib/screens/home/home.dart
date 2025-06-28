@@ -5,7 +5,8 @@ import 'package:news_app/core/routes_manager/routes_manager.dart';
 import 'package:news_app/provider/home_provider.dart';
 import 'package:news_app/screens/home/drawer/home_drawer.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -24,6 +24,7 @@ class SourceView extends StatefulWidget {
 
 class _SourceViewState extends State<SourceView> {
   late SourcesViewProvider sourcesViewProvider;
+  late ScrollController scrollController;
 
   @override
   void initState() {

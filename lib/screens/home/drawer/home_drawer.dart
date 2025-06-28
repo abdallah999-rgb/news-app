@@ -5,8 +5,8 @@ import 'package:news_app/core/colors_manager/colors_manager.dart';
 import 'package:news_app/provider/configuration_provider.dart';
 import 'package:news_app/provider/home_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../../l10n/app_localizations.dart';
 
 class HomeDrawer extends StatefulWidget {
   const HomeDrawer({super.key});

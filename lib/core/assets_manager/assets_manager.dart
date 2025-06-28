@@ -16,6 +16,10 @@ class AssetsManager{
   static const String darkBusiness = "assets/images/dark business.png";
   static const String radioForDark = "assets/images/radio_for_dark.png";
   static const String radioForLight = "assets/images/radio_for_light.png";
+  static const String leftDarkViewAll = "assets/images/left dark view all.png";
+  static const String rightDarkViewAll = "assets/images/right dark view all.png";
+  static const String leftLightViewAll = "assets/images/left light view all.png";
+  static const String rightLightViewAll = "assets/images/right light view all.png";
 
 
 

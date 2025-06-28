@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/screens/home/category_view/category_item.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../data/models/category_model.dart';
+import '../../../l10n/app_localizations.dart';
 
 class CategoryView extends StatelessWidget {
   const CategoryView({super.key});

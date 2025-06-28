@@ -7,7 +7,8 @@ import 'package:news_app/domain/entities/articles_entity.dart';
 import 'package:news_app/provider/configuration_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../l10n/app_localizations.dart';
 
 class ArticleItem extends StatefulWidget {
   const ArticleItem({super.key, required this.article});

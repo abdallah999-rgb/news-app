@@ -4,7 +4,7 @@ import '../../domain/repo_contract/search_repo.dart';
 import '../data_source_contract/search_datasource.dart';
 import '../../data/api_services/articles_response/Article.dart';
 
-class SearchRepoImpl extends SearchRepo{
+class SearchRepoImpl implements SearchRepo{
   final SearchDataSource _dataSource;
   SearchRepoImpl(this._dataSource);
   @override

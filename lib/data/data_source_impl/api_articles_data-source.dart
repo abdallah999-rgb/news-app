@@ -4,7 +4,7 @@ import 'package:news_app/data/api_services/articles_response/Article.dart';
 import 'package:news_app/data/data_source_contract/articles_data_source.dart';
 import 'package:news_app/domain/entities/sources_entity.dart';
 
-class ApiArticlesDataSourceImpl extends ArticlesDataSource{
+class ApiArticlesDataSourceImpl implements ArticlesDataSource{
   APIServices apiServices;
   ApiArticlesDataSourceImpl({required this.apiServices});
   @override

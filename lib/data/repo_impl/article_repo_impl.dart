@@ -5,7 +5,7 @@ import 'package:news_app/domain/entities/articles_entity.dart';
 import 'package:news_app/domain/entities/sources_entity.dart';
 import '../../domain/repo_contract/article_repo.dart';
 
-class ArticleRepoImpl extends ArticleRepo{
+class ArticleRepoImpl implements ArticleRepo{
   ArticlesDataSource articlesDataSource;
   ArticleRepoImpl({required this.articlesDataSource});
   @override
