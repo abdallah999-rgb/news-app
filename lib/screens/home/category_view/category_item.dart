@@ -56,7 +56,7 @@ class CategoryItem extends StatelessWidget {
                 ),
                 category.categoryNumber % 2 == 0
                     ? Positioned(
-                  top: 140.h,
+                  top: 142.h,
                   right: 210.w,
                   child: Image.asset(
                     AssetsManager.leftLightViewAll
@@ -64,7 +64,7 @@ class CategoryItem extends StatelessWidget {
                   ),
                 )
                     : Positioned(
-                  top: 140.h,
+                  top: 142.h,
                   left: 190.w,
                   child: Image.asset(
                     AssetsManager.rightLightViewAll,
