@@ -33,16 +33,16 @@ class CategoryItem extends StatelessWidget {
                 ),
                 category.categoryNumber % 2 == 0
                     ? Positioned(
-                  top: 140,
-                  right: 220,
+                  top: 140.h,
+                  right: 220.w,
                       child: Image.asset(
                         AssetsManager.leftDarkViewAll,
 
                       ),
                     )
                     : Positioned(
-                  top: 140,
-                      left: 190,
+                  top: 140.h,
+                      left: 190.w,
                       child: Image.asset(
                         AssetsManager.rightDarkViewAll,
                         alignment: Alignment.center,
@@ -56,7 +56,7 @@ class CategoryItem extends StatelessWidget {
                 ),
                 category.categoryNumber % 2 == 0
                     ? Positioned(
-                  top: 142.h,
+                  top: 140.h,
                   right: 210.w,
                   child: Image.asset(
                     AssetsManager.leftLightViewAll
@@ -64,7 +64,7 @@ class CategoryItem extends StatelessWidget {
                   ),
                 )
                     : Positioned(
-                  top: 142.h,
+                  top: 140.h,
                   left: 190.w,
                   child: Image.asset(
                     AssetsManager.rightLightViewAll,
