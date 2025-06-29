@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/core/dependency_injection/di.dart';
 import 'package:news_app/core/widgets/error_state_widget.dart';
 import 'package:news_app/data/api_services/api_services.dart';
 import 'package:news_app/data/data_source_impl/api%20_sources_data_source_impl.dart';
 import 'package:news_app/data/data_source_impl/api_articles_data-source.dart';
 import 'package:news_app/domain/use_cases/get_articles_usecases.dart';
 import 'package:news_app/domain/use_cases/get_sources_use_cases.dart';
-import 'package:news_app/provider/sources_view_provider.dart';
+import 'package:news_app/provider/view_model.dart';
 import 'package:news_app/screens/home/source_view/article_item.dart';
 import 'package:provider/provider.dart';
 import '../../../data/models/category_model.dart';
@@ -23,7 +24,7 @@ class SourceView extends StatefulWidget {
 }
 
 class _SourceViewState extends State<SourceView> {
-  late SourcesViewProvider sourcesViewProvider;
+  late ViewModel sourcesViewProvider;
   late ScrollController scrollController;
 
   @override
@@ -34,7 +35,7 @@ class _SourceViewState extends State<SourceView> {
   }
 
   loadData() async {
-    sourcesViewProvider = SourcesViewProvider(articleUsesCases: GetArticleUsesCases(repository: ArticleRepoImpl(articlesDataSource: ApiArticlesDataSourceImpl(apiServices: APIServices()))), sourcesUseCase: GetSourceUsesCases(repository: SourcesRepoImpl(dataSource: ApiSourcesDataSourceImpl(apiServices: APIServices()))));
+    sourcesViewProvider = getIt<ViewModel>();
     await sourcesViewProvider.loadSources(widget.category);
     await sourcesViewProvider.loadArticles(
       (sourcesViewProvider.sourcesState as SourcesSuccessState).sources[0],
@@ -47,7 +48,7 @@ class _SourceViewState extends State<SourceView> {
       value: sourcesViewProvider,
       child: Column(
         children: [
-          Consumer<SourcesViewProvider>(
+          Consumer<ViewModel>(
             builder: (context, sourcesViewProvider, child) {
               var state = sourcesViewProvider.sourcesState;
               switch (state) {
@@ -78,7 +79,7 @@ class _SourceViewState extends State<SourceView> {
             },
           ),
           SizedBox(height: 14.h),
-          Consumer<SourcesViewProvider>(
+          Consumer<ViewModel>(
             builder: (context, sourcesViewProvider, child) {
               var state = sourcesViewProvider.articlesState;
               switch (state) {

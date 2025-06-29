@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:news_app/core/result.dart';
 import 'package:news_app/data/api_services/articles_response/Article.dart';
 import 'package:news_app/data/data_source_contract/articles_data_source.dart';
@@ -5,8 +6,10 @@ import 'package:news_app/domain/entities/articles_entity.dart';
 import 'package:news_app/domain/entities/sources_entity.dart';
 import '../../domain/repo_contract/article_repo.dart';
 
+@Injectable(as: ArticleRepo)
 class ArticleRepoImpl implements ArticleRepo{
   ArticlesDataSource articlesDataSource;
+  @factoryMethod
   ArticleRepoImpl({required this.articlesDataSource});
   @override
   Future<Result<List<ArticleEntity>>> getArticles(SourceEntity source)async {

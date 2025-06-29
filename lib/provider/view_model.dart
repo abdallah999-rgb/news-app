@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:news_app/core/result.dart';
 import 'package:news_app/domain/entities/articles_entity.dart';
 import 'package:news_app/domain/entities/sources_entity.dart';
@@ -6,11 +7,12 @@ import 'package:news_app/domain/use_cases/get_articles_usecases.dart';
 import 'package:news_app/domain/use_cases/get_sources_use_cases.dart';
 import '../data/models/category_model.dart';
 
-
-class SourcesViewProvider extends ChangeNotifier{
+@injectable
+class ViewModel extends ChangeNotifier{
   GetSourceUsesCases sourcesUseCase;
   GetArticleUsesCases articleUsesCases;
-  SourcesViewProvider({required this.articleUsesCases,required this.sourcesUseCase});
+  @factoryMethod
+  ViewModel({required this.articleUsesCases,required this.sourcesUseCase});
    List <SourceEntity> sources = [];
   SourcesState sourcesState = SourcesLoadingState();
   ArticlesState articlesState = ArticlesLoadingState();

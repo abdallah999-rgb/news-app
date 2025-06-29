@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/core/colors_manager/colors_manager.dart';
+import 'package:news_app/core/dependency_injection/di.dart';
 import 'package:news_app/provider/configuration_provider.dart';
 import 'package:news_app/provider/search_provider.dart';
 import 'package:provider/provider.dart';
-import '../../data/api_services/api_services.dart';
-import '../../data/data_source_impl/search_data_source_impl.dart';
-import '../../data/repo_impl/search_repo_impl.dart';
 import '../../l10n/app_localizations.dart';
 import '../home/source_view/article_item.dart';
 
@@ -39,7 +37,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   initViewModel() {
-    viewModel = SearchProvider(SearchRepoImpl(SearchDataSourceImpl(APIServices())));
+    viewModel = getIt<SearchProvider>();
 
   }
 

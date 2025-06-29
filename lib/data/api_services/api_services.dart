@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http; // as http يعني كإني بديها اسم اتعامل بيه بعد كده
+import 'package:injectable/injectable.dart';
 import 'package:news_app/core/result.dart';
 import 'package:news_app/data/api_services/sources_rsponse/Source.dart';
 import 'package:news_app/data/api_services/sources_rsponse/SourcesResponse.dart';
@@ -8,6 +9,7 @@ import '../models/category_model.dart';
 import 'articles_response/Article.dart';
 import 'articles_response/ArticlesResponse.dart';
 
+@singleton
 class APIServices {
 
   static const String _baseUrl = "newsapi.org";

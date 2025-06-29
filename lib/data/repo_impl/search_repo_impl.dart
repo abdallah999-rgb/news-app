@@ -1,11 +1,14 @@
+import 'package:injectable/injectable.dart';
 import 'package:news_app/core/result.dart';
 import 'package:news_app/domain/entities/articles_entity.dart';
 import '../../domain/repo_contract/search_repo.dart';
 import '../data_source_contract/search_datasource.dart';
 import '../../data/api_services/articles_response/Article.dart';
 
+@Injectable(as: SearchRepo)
 class SearchRepoImpl implements SearchRepo{
   final SearchDataSource _dataSource;
+  @factoryMethod
   SearchRepoImpl(this._dataSource);
   @override
   Future<Result<List<ArticleEntity>>> search(String query) async{

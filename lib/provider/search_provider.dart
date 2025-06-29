@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:injectable/injectable.dart';
 import 'package:news_app/core/result.dart';
 import 'package:news_app/domain/entities/articles_entity.dart';
-import '../data/api_services/articles_response/Article.dart';
-import '../domain/repo_contract/search_repo.dart';
-
+import 'package:news_app/domain/use_cases/search_use_cases.dart';
+@injectable
 class SearchProvider extends ChangeNotifier{
-  final SearchRepo _searchRepo;
-  SearchProvider(this._searchRepo);
+  final SearchUseCases searchUseCases;
+  @factoryMethod
+  SearchProvider(this.searchUseCases);
   bool isLoading = false;
   List<ArticleEntity> articles = [];
   String? errorMessage ;
@@ -17,7 +18,7 @@ class SearchProvider extends ChangeNotifier{
       return;
     }
     isLoading = true;
-  var result =  await _searchRepo.search(query);
+  var result =  await searchUseCases.invoke(query);
   switch(result){
 
     case Success<List<ArticleEntity>>():
